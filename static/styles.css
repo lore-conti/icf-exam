@@ -1,0 +1,68 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f6ff; /* Very light blue background for a clean look */
+    color: #2a3b5f; /* Soft navy for primary text */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for the container */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    color: #365f91; /* Medium navy for headings */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2a3b5f; /* Soft navy for body text */
+}
+
+button, a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #4a78b3; /* Light navy button color */
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, a.button:hover {
+    background-color: #365f91; /* Darker navy for button hover */
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.label {
+    font-size: 16px;
+    color: #2a3b5f; /* Matches main text color */
+}
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #7a8ca9; /* Soft grayish-blue for footer text */
+}

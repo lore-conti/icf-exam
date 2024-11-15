@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICF Exam Preparation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{ 'Correct!' if correct else 'Incorrect' }}</h1>
+        <h2>{{ quiz.question }}</h2>
+        <p><strong>Your answer:</strong> {{ user_answer }}. {{ user_answer_text }}</p>
+        <p><strong>Correct answer:</strong> {{ quiz['answer'] }}. {{ correct_answer_text }}</p>
+        <p>{{ quiz['explanation'] }}</p>
+
+        {% if is_last %}
+        <a href="{{ url_for('finish') }}" class="button">Finish Quiz</a>
+        {% else %}
+        <a href="{{ url_for('question', qid=next_qid) }}" class="button">Next Question</a>
+        {% endif %}
+    </div>
+</body>
+
+</html>

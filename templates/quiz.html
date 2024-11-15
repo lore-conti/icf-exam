@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ICF Exam Preparation Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{ question_id }}: {{ quiz.question }}</h1>
+
+        <form action="{{ url_for('submit', qid=qid) }}" method="post">
+            {% for option, text in quiz.options.items() %}
+            <div>
+                <input type="radio" id="option{{ option }}" name="answer" value="{{ option }}" required>
+                <label for="option{{ option }}" class="label">{{ option }}. {{ text }}</label>
+            </div>
+            {% endfor %}
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+
+        <form action="{{ url_for('finish') }}" method="get" style="margin-top: 20px;">
+            <button type="submit">End Quiz</button>
+        </form>
+        <p>Question {{ qid + 1 }} of {{ total }}</p>
+        <p>Correct answers so far: {{ correct }}</p>
+    </div>
+</body>
+
+</html>
