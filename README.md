@@ -37,6 +37,7 @@ Install the required Python packages:
 `python -m venv venv`
 ### Activate Virtual Environment
 `venv/bin/activate`
+`.\venv\Scripts\activate`
 ### Deactivate Virtual Environment
 `deactivate`
 

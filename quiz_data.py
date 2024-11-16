@@ -48,7 +48,7 @@ quiz = [
         "options": {
             "A": "When the client frequently disagrees with the coach.",
             "B": "If the client shows no progress due to unresolved psychological issues.",
-            "C": "When the coach feels uncomfortable with the client\' goals.",
+            "C": "When the coach feels uncomfortable with the client's goals.",
             "D": "If the client requests frequent rescheduling of sessions.",
         },
         "answer": "B",
@@ -132,7 +132,7 @@ quiz = [
         "explanation": "Confidentiality and transparency about information-sharing are key to managing sponsor relationships ethically (ICF Code of Ethics, Section I, Standard 5).",
     },
     {
-        "question": "Which competency best describes a coach\' role in maintaining client autonomy in the coaching process?",
+        "question": "Which competency best describes a coach's role in maintaining client autonomy in the coaching process?",
         "options": {
             "A": "Establishes and Maintains Agreements",
             "B": "Facilitates Client Growth",
@@ -165,7 +165,7 @@ quiz = [
         "explanation": "Coaching is a client-centered approach that emphasizes helping clients discover their own insights and solutions (ICF Core Competency 7).",
     },
     {
-        "question": "A coach realizes they have a personal bias against the client\' profession. What is the best course of action?",
+        "question": "A coach realizes they have a personal bias against the client's profession. What is the best course of action?",
         "options": {
             "A": "Continue coaching without addressing the bias.",
             "B": "Terminate the coaching relationship immediately.",
@@ -178,7 +178,7 @@ quiz = [
     {
         "question": "What should a coach do if a client requests a session that goes beyond the coach's area of expertise?",
         "options": {
-            "A": "Agree to the request, as the client\' needs are the priority.",
+            "A": "Agree to the request, as the client's needs are the priority.",
             "B": "Politely refuse and offer to refer the client to an appropriate expert.",
             "C": "Offer a generalized solution without acknowledging limitations.",
             "D": "Continue coaching while seeking further training on the subject.",
@@ -195,7 +195,7 @@ quiz = [
             "D": "Terminate the coaching relationship immediately.",
         },
         "answer": "B",
-        "explanation": "A coach should welcome feedback to ensure the coaching process meets the client\' needs and expectations (ICF Core Competency 3).",
+        "explanation": "A coach should welcome feedback to ensure the coaching process meets the client's needs and expectations (ICF Core Competency 3).",
     },
     {
         "question": "Which competency best describes a coach's role in maintaining client autonomy in the coaching process?",
@@ -308,7 +308,7 @@ quiz = [
         "explanation": "Reflecting on obstacles can help clients gain insight and adjust their approach to goals (ICF Core Competency 8). Reference: ICF Core Competency 8: Facilitates Client Growth.",
     },
     {
-        "question": "The concept of 'partnering with clients' in coaching implies that:",
+        "question": "The concept of 'spartnering with clients' in coaching implies that:",
         "options": {
             "A": "The coach leads the client toward best practices",
             "B": "Both client and coach actively shape the coaching process",
@@ -464,10 +464,10 @@ quiz = [
     {
         "question": "Which of the following is an example of maintaining presence during a coaching session?",
         "options": {
-            "A": "Preparing questions in advance based on the client\' previous session",
-            "B": "Allowing silence to create space for the client\' reflection",
+            "A": "Preparing questions in advance based on the client's previous session",
+            "B": "Allowing silence to create space for the client's reflection",
             "C": "Asking multiple questions quickly to gather as much information as possible",
-            "D": "Offering solutions to speed up the session\' progress",
+            "D": "Offering solutions to speed up the session's progress",
         },
         "answer": "B",
         "explanation": "Maintaining presence involves being fully engaged and responsive in the moment, which includes creating reflective space through silence. Reference: ICF Core Competencies, Competency 5: Maintains Presence.",
@@ -475,7 +475,7 @@ quiz = [
     {
         "question": "How does a coach demonstrate active listening during a session?",
         "options": {
-            "A": "Summarizing the client\' statements and clarifying for understanding",
+            "A": "Summarizing the client's statements and clarifying for understanding",
             "B": "Avoiding interruptions and letting the client speak uninterrupted",
             "C": "Taking detailed notes to document all points raised by the client",
             "D": "Asking leading questions to guide the client toward a specific solution",
@@ -498,9 +498,9 @@ quiz = [
         "question": "Which of the following behaviors supports the competency of cultivating trust and safety?",
         "options": {
             "A": "Encouraging the client to share feelings and experiences without fear of judgment",
-            "B": "Redirecting the client\' attention away from difficult emotions",
-            "C": "Highlighting the client\' flaws to motivate change",
-            "D": "Focusing solely on achieving the client\' stated goals without addressing their emotional state",
+            "B": "Redirecting the client's attention away from difficult emotions",
+            "C": "Highlighting the client's flaws to motivate change",
+            "D": "Focusing solely on achieving the client's stated goals without addressing their emotional state",
         },
         "answer": "A",
         "explanation": "Creating a non-judgmental and empathetic environment helps build trust and safety, enabling the client to be open and authentic. Reference: ICF Core Competencies, Competency 4: Cultivates Trust and Safety.",
@@ -517,7 +517,7 @@ quiz = [
         "explanation": "Establishing and maintaining agreements clarifies expectations, roles, and outcomes, ensuring alignment and a structured partnership between coach and client. Reference: ICF Core Competencies, Competency 3: Establishes and Maintains Agreements.",
     },
     {
-        "question": "A coach frequently adapts their questions and techniques to align with the client\' cultural context and personal preferences. Which competency is being demonstrated?",
+        "question": "A coach frequently adapts their questions and techniques to align with the client's cultural context and personal preferences. Which competency is being demonstrated?",
         "options": {
             "A": "Demonstrates Ethical Practice",
             "B": "Embody a Coaching Mindset",
@@ -525,47 +525,47 @@ quiz = [
             "D": "Facilitates Client Growth",
         },
         "answer": "C",
-        "explanation": "Cultivating trust and safety includes adapting to the client\' unique context, which fosters mutual respect and understanding. Reference: ICF Core Competencies, Competency 4: Cultivates Trust and Safety.",
+        "explanation": "Cultivating trust and safety includes adapting to the client's unique context, which fosters mutual respect and understanding. Reference: ICF Core Competencies, Competency 4: Cultivates Trust and Safety.",
     },
     {
         "question": "What is a hallmark of evoking awareness in coaching?",
         "options": {
-            "A": "Asking questions that challenge the client\' current assumptions",
-            "B": "Providing detailed advice and solutions for the client\' challenges",
-            "C": "Creating a timeline for achieving the client\' goals",
-            "D": "Summarizing the client\' progress at the end of the session",
+            "A": "Asking questions that challenge the client's current assumptions",
+            "B": "Providing detailed advice and solutions for the client's challenges",
+            "C": "Creating a timeline for achieving the client's goals",
+            "D": "Summarizing the client's progress at the end of the session",
         },
         "answer": "A",
-        "explanation": "Evoking awareness involves asking powerful, thought-provoking questions that expand the client\' perspective and help them discover new insights. Reference: ICF Core Competencies, Competency 7: Evokes Awareness.",
+        "explanation": "Evoking awareness involves asking powerful, thought-provoking questions that expand the client's perspective and help them discover new insights. Reference: ICF Core Competencies, Competency 7: Evokes Awareness.",
     },
     {
         "question": "How does a coach facilitate client growth according to ICF Core Competencies?",
         "options": {
             "A": "By assigning specific actions for the client to complete",
             "B": "By partnering with the client to design goals, actions, and accountability measures",
-            "C": "By focusing primarily on the coach\' agenda for the client",
+            "C": "By focusing primarily on the coach's agenda for the client",
             "D": "By ensuring the client reaches a predetermined set of milestones",
         },
         "answer": "B",
-        "explanation": "Facilitating client growth includes co-creating goals and action plans that integrate the client\' insights, fostering autonomy and progress. Reference: ICF Core Competencies, Competency 8: Facilitates Client Growth.",
+        "explanation": "Facilitating client growth includes co-creating goals and action plans that integrate the client's insights, fostering autonomy and progress. Reference: ICF Core Competencies, Competency 8: Facilitates Client Growth.",
     },
     {
         "question": "A client begins discussing a new topic during a session that was not part of their original goal. How should the coach respond?",
         "options": {
             "A": "Redirect the client to focus on the original goal",
-            "B": "Explore the client\' new topic to understand its relevance",
+            "B": "Explore the client's new topic to understand its relevance",
             "C": "Postpone the discussion until the next session",
             "D": "Suggest terminating the coaching relationship if the focus changes",
         },
         "answer": "B",
-        "explanation": "Coaching is client-driven, and exploring new topics helps align with the client\' current priorities and needs. Reference: ICF Core Competencies, Competency 5: Maintains Presence.",
+        "explanation": "Coaching is client-driven, and exploring new topics helps align with the client's current priorities and needs. Reference: ICF Core Competencies, Competency 5: Maintains Presence.",
     },
     {
         "question": "What demonstrates embodying a coaching mindset during a session?",
         "options": {
             "A": "The coach continually seeks to learn from the client and adapts to their needs",
             "B": "The coach ensures the client adheres to a strict coaching plan",
-            "C": "The coach assumes responsibility for the client\' results",
+            "C": "The coach assumes responsibility for the client's results",
             "D": "The coach limits creativity to maintain structure",
         },
         "answer": "A",
@@ -620,7 +620,7 @@ quiz = [
         "options": {
             "A": "Inform the client of the bias",
             "B": "Seek to become aware of and manage the bias",
-            "C": "Ignore the bias if it doesn't impact coaching sessions",
+            "C": "Ignore the bias if it doesn'st impact coaching sessions",
             "D": "End the coaching relationship immediately",
         },
         "answer": "B",
@@ -676,7 +676,7 @@ quiz = [
             "A": "What are some possible ways you could approach this?",
             "B": "What would you do if you were me?",
             "C": "Have you tried this method before?",
-            "D": "Why haven't you achieved this goal yet?",
+            "D": "Why haven'st you achieved this goal yet?",
         },
         "answer": "A",
         "explanation": "Open-ended questions encourage clients to think creatively and explore options (ICF Core Competency 7). Reference: ICF Core Competency 7: Evokes Awareness.",
@@ -1158,19 +1158,19 @@ quiz = [
         "question": "How should a coach handle a situation where the client expresses frustration about their lack of progress?",
         "options": {
             "A": "Reassure the client that they will eventually achieve their goals",
-            "B": "Explore the client\' feelings and discuss any obstacles or areas where they may be feeling blocked",
+            "B": "Explore the client's feelings and discuss any obstacles or areas where they may be feeling blocked",
             "C": "Redirect the conversation to focus on positive aspects of their journey",
             "D": "Encourage the client to focus on simpler goals",
         },
         "answer": "B",
-        "explanation": "A coach should explore the client\' feelings and any barriers they may be experiencing. This aligns with helping clients gain awareness and insights into what might be hindering progress. Reference: ICF Core Competencies, Competency 7: Evokes Awareness.",
+        "explanation": "A coach should explore the client's feelings and any barriers they may be experiencing. This aligns with helping clients gain awareness and insights into what might be hindering progress. Reference: ICF Core Competencies, Competency 7: Evokes Awareness.",
     },
     {
         "question": "What is a key component of maintaining trust and safety in a coaching relationship?",
         "options": {
             "A": "Providing frequent praise to make the client feel good",
             "B": "Allowing the client to freely express themselves without fear of judgment",
-            "C": "Encouraging the client to adopt the coach\' opinions",
+            "C": "Encouraging the client to adopt the coach's opinions",
             "D": "Ensuring the client achieves measurable results every session",
         },
         "answer": "B",
@@ -1179,7 +1179,7 @@ quiz = [
     {
         "question": "During a coaching session, a client begins discussing personal family issues. How should the coach respond?",
         "options": {
-            "A": "Politely redirect the conversation back to the client\' main goal",
+            "A": "Politely redirect the conversation back to the client's main goal",
             "B": "Allow the client to discuss the issues if they are relevant to their coaching objectives",
             "C": "Advise the client to consult a therapist for family issues",
             "D": "Share personal advice on how to handle family problems",
@@ -1190,7 +1190,7 @@ quiz = [
     {
         "question": "Which action demonstrates active listening in a coaching session?",
         "options": {
-            "A": "Summarizing the client\' points to ensure understanding",
+            "A": "Summarizing the client's points to ensure understanding",
             "B": "Taking notes while the client speaks",
             "C": "Maintaining eye contact to show interest",
             "D": "Asking closed-ended questions to clarify details",
@@ -1201,7 +1201,7 @@ quiz = [
     {
         "question": "What should a coach do if a client expresses uncertainty about their goals?",
         "options": {
-            "A": "Set goals for the client based on the coach\' assessment",
+            "A": "Set goals for the client based on the coach's assessment",
             "B": "Encourage the client to explore their values and motivations",
             "C": "Advise the client to take time off from coaching",
             "D": "Tell the client to stick to a simpler goal",
@@ -1218,7 +1218,7 @@ quiz = [
             "D": "Send reminders before each session",
         },
         "answer": "B",
-        "explanation": "Discussing missed sessions with the client can help uncover underlying challenges or reassess the client\' commitment to their goals. Reference: ICF Core Competencies, Competency 3: Establishes and Maintains Agreements.",
+        "explanation": "Discussing missed sessions with the client can help uncover underlying challenges or reassess the client's commitment to their goals. Reference: ICF Core Competencies, Competency 3: Establishes and Maintains Agreements.",
     },
     {
         "question": "A client shows signs of frustration and lack of motivation. How should the coach approach this?",
@@ -1694,7 +1694,7 @@ quiz = [
         "explanation": "Powerful questions are used to facilitate client insight and learning, helping them explore new perspectives and deepen their self-awareness.\nReference: ICF Core Competencies, Competency 7: Evokes Awareness.",
     },
     {
-        "question": 'Which of the following best describes "maintaining presence" in a coaching session?',
+        "question": 'sWhich of the following best describes "maintaining presence" in a coaching session?'s,
         "options": {
             "A": "Remaining silent for long periods to encourage client reflection",
             "B": "Demonstrating empathy, curiosity, and adaptability in response to the client's needs",
@@ -1960,7 +1960,7 @@ quiz = [
     {
         "question": "When is it appropriate to end a coaching relationship?",
         "options": {
-            "A": "When the coach feels the client isn't making progress",
+            "A": "When the coach feels the client isn'st making progress",
             "B": "Only when the client decides to end it",
             "C": "If the agreed-upon goals are achieved or if the coach feels the client's needs are better met elsewhere",
             "D": "After a set number of sessions, regardless of progress",
@@ -2175,7 +2175,7 @@ quiz = [
             "D": "Avoid further discussion and focus on predetermined outcomes",
         },
         "answer": "C",
-        "explanation": "Coaching is flexible to the client's needs, so while it's appropriate to listen and support clients as they explore related issues, referral should be considered if the discussion doesn't align with coaching's scope.\nReference: ICF Core Competencies, Competency 3: Establishes and Maintains Agreements.",
+        "explanation": "Coaching is flexible to the client's needs, so while it's appropriate to listen and support clients as they explore related issues, referral should be considered if the discussion doesn'st align with coaching's scope.\nReference: ICF Core Competencies, Competency 3: Establishes and Maintains Agreements.",
     },
     {
         "question": "How does the ICF define a coaching relationship?",
@@ -2209,5 +2209,346 @@ quiz = [
         },
         "answer": "B",
         "explanation": "Asking powerful questions helps the client explore options and generate their own ideas for action, fostering independence and ownership.\nReference: ICF Core Competencies, Competency 7: Evokes Awareness.",
+    },
+    {
+        "question": "You are in contract negotiations with a corporate client for a coaching contract. They ask if you are working with a direct competitor. What is the BEST way to react?",
+        "options": {
+            "A": "Say that this is none of their business.",
+            "B": "Mention that due to client confidentiality, you cannot answer, but state that you do work for other competitors.",
+            "C": "Deny that you are working for any direct competitor.",
+            "D": "Answer truthfully that you do not work for the competitor they mentioned.",
+        },
+        "answer": "B",
+        "explanation": "Disclosing potential conflicts of interest while maintaining client confidentiality is critical. Reference: ICF Code of Ethics, Section I.10",
+    },
+    {
+        "question": "As an action step, your client mentions they will light a candle in a cathedral as a prayer to St. Anthony. What is the BEST way to react?",
+        "options": {
+            "A": "Inquire what St. Anthony's intervention would mean for the client and what it would enable them to do differently.",
+            "B": "Tell the client that you do not believe in the intervention of saints.",
+            "C": "Relate a story about how St. Anthony always helps you find things, too.",
+            "D": "Ask the client which other support they might need.",
+        },
+        "answer": "A",
+        "explanation": "Acknowledging and being sensitive to the client’s identity, experiences, values, and beliefs is essential. Reference: ICF Core Competency 4.1",
+    },
+    {
+        "question": "Your client is talking negatively about their boss, calling them 'stupid.'s How should you reflect back?",
+        "options": {
+            "A": "Use the client’s language and ask how they have dealt with the boss’ stupidity so far.",
+            "B": "Reframe and talk about 'sthe boss’ behavior which you have trouble with.'s",
+            "C": "Call out the client on their use of language and mention that being respectful is key.",
+            "D": "Say that some people are more intelligent than others and that is just a fact of life.",
+        },
+        "answer": "B",
+        "explanation": "Reframing language in a respectful manner is aligned with coaching ethics and helps maintain a constructive dialogue. Reference: ICF Core Competency 1.3",
+    },
+    {
+        "question": "A usually energetic client talks about feeling lethargic and unable to sleep. What is the BEST way to react?",
+        "options": {
+            "A": "Ignore the issue, it will pass.",
+            "B": "Remind the client to muster some energy for the session.",
+            "C": "Talk to the client about the dangers of burnout.",
+            "D": "Recommend the client talk to a medical doctor to rule out any physical causes.",
+        },
+        "answer": "D",
+        "explanation": "Referring clients to other professionals when appropriate maintains the distinction between coaching and other professions. Reference: ICF Core Competency 1.7",
+    },
+    {
+        "question": "Your client’s sponsor asks, 'sIs your client making any progress?'s at a networking event. How do you respond?",
+        "options": {
+            "A": "Affirm that you are making good progress.",
+            "B": "Remind the sponsor of the confidentiality agreement and offer to arrange a three-way conversation.",
+            "C": "Talk generically about the value of coaching.",
+            "D": "Change the subject inconspicuously.",
+        },
+        "answer": "B",
+        "explanation": "Maintaining confidentiality and offering a three-way conversation ensures compliance with ethical standards. Reference: ICF Core Competency 1.5",
+    },
+    {
+        "question": "A client asks for your help designing an offsite meeting for their department. What is the BEST way to react?",
+        "options": {
+            "A": "Reject the request, saying you are a coach and not a consultant.",
+            "B": "Gladly give your input.",
+            "C": "Act as a coach to find out what they want to achieve and give input only as one of many possibilities.",
+            "D": "Ask what they know about the issue already.",
+        },
+        "answer": "C",
+        "explanation": "Helping the client uncover their own resources before offering solutions maintains the coaching distinction. Reference: ICF Core Competency 1.6",
+    },
+    {
+        "question": "Your client is leaning toward a job offer you believe is not beneficial for them. What is the BEST response?",
+        "options": {
+            "A": "Step out of the role of coach and consult them on the negative consequences.",
+            "B": "Ask how they are leaning toward that decision.",
+            "C": "Tell a story about how you made a similar mistake in the past.",
+            "D": "Acknowledge their choice and check your perception.",
+        },
+        "answer": "D",
+        "explanation": "Acknowledging that clients are responsible for their own choices aligns with coaching ethics. Reference: ICF Core Competency 2.1",
+    },
+    {
+        "question": "A client makes you feel drained after every session. What is the BEST way to respond?",
+        "options": {
+            "A": "Raise the issue in coaching supervision.",
+            "B": "Mention it to the client.",
+            "C": "Hire a personal trainer to get fit.",
+            "D": "Journal about it after every session with the client.",
+        },
+        "answer": "A",
+        "explanation": "Raising issues in supervision ensures ethical and professional practice. Reference: ICF Core Competency 2.6",
+    },
+    {
+        "question": "During a chemistry meeting, you feel you are not a good match for a client. What should you do?",
+        "options": {
+            "A": "Ignore your feelings and proceed with the contract.",
+            "B": "Mention your hesitation and partner with the client to decide compatibility.",
+            "C": "Reject the contract because you feel unsure.",
+            "D": "Recommend a senior colleague as a better fit.",
+        },
+        "answer": "B",
+        "explanation": "Partnering with the client ensures transparency and respects their autonomy in deciding compatibility. Reference: ICF Core Competency 3.5",
+    },
+    {
+        "question": "Your client discusses a team member causing difficulties. The session goal is a strategy for people development. What should you do?",
+        "options": {
+            "A": "Focus only on people development and ignore the issue.",
+            "B": "Tell the client what to do about the team member.",
+            "C": "Postpone the topic about the team member to another session.",
+            "D": "Ask if the strategy relates to the team member and recontract the session focus if needed.",
+        },
+        "answer": "D",
+        "explanation": "Partnering with the client to reconfirm session goals honors their priorities. Reference: ICF Core Competency 3.6",
+    },
+    {
+        "question": "Your client wants to discuss a salary conversation and mentions feeling insecure. What is the BEST course of action?",
+        "options": {
+            "A": "Focus on the insecurity, as it is more important.",
+            "B": "Teach the client a power pose for confidence.",
+            "C": "Ask what they want to talk about: insecurity or preparation.",
+            "D": "Suggest a roleplay of the salary conversation.",
+        },
+        "answer": "C",
+        "explanation": "Partnering with the client to decide what to address supports their autonomy. Reference: ICF Core Competency 3.7",
+    },
+    {
+        "question": "Your client is excited about Formula 1 racing, which you find boring. What is the BEST way to respond?",
+        "options": {
+            "A": "Listen non-judgmentally and continue with the coaching.",
+            "B": "Make the client aware of the environmental impact of racing.",
+            "C": "Curiously explore their enthusiasm to find links to coaching topics.",
+            "D": "Tell them to return to the topic at hand.",
+        },
+        "answer": "C",
+        "explanation": "Demonstrating curiosity fosters rapport and deeper understanding of the client. Reference: ICF Core Competency 5.4",
+    },
+    {
+        "question": "Your client feels frustrated after making no progress on their goals. What is the BEST response?",
+        "options": {
+            "A": "Join them in a shout of frustration.",
+            "B": "Tell them they are not trying hard enough.",
+            "C": "Encourage them to find accountability for their process.",
+            "D": "Ask what keeps them trying even when progress seems absent.",
+        },
+        "answer": "D",
+        "explanation": "Exploring their motivation helps the client gain insights into their resilience and determination. Reference: ICF Core Competency 8.1",
+    },
+    {
+        "question": "Your client becomes animated and excited while discussing a topic. What should you do?",
+        "options": {
+            "A": "Notice and understand you are on the right track.",
+            "B": "Ask the client what caused the shift in energy.",
+            "C": "Mirror their excitement to build rapport.",
+            "D": "Use this energy to ask your next question quickly.",
+        },
+        "answer": "B",
+        "explanation": "Acknowledging energy shifts encourages the client to reflect and share more about their experience. Reference: ICF Core Competency 6.4",
+    },
+    {
+        "question": "You had a fight before a coaching session and feel emotionally unsettled. What is the BEST course of action?",
+        "options": {
+            "A": "Start the session and see how you feel.",
+            "B": "Tell the client about your situation to vent.",
+            "C": "Postpone for a few minutes to compose yourself.",
+            "D": "Ignore the feeling and jump into the session.",
+        },
+        "answer": "C",
+        "explanation": "Mentally and emotionally preparing for sessions ensures professionalism. Reference: ICF Core Competency 2.7",
+    },
+    {
+        "question": "Your client is making repeated derogatory remarks about a colleague. How should you respond?",
+        "options": {
+            "A": "Reframe the language into constructive terms.",
+            "B": "Encourage the client to continue venting for clarity.",
+            "C": "Reflect their exact words back to build rapport.",
+            "D": "Tell them to avoid using negative language in coaching.",
+        },
+        "answer": "A",
+        "explanation": "Reframing language helps maintain respect and fosters a productive dialogue. Reference: ICF Core Competency 1.3",
+    },
+    {
+        "question": "During a session, your client discusses a term that seems important but is unfamiliar to you. What do you do?",
+        "options": {
+            "A": "Ignore the term to focus on broader themes.",
+            "B": "Ask about the term and its significance to the client.",
+            "C": "Use the term in your responses to build connection.",
+            "D": "Ask the client to avoid complex language.",
+        },
+        "answer": "B",
+        "explanation": "Acknowledging and exploring the client’s language demonstrates respect and curiosity. Reference: ICF Core Competency 6.2",
+    },
+    {
+        "question": "You realize you do not fully understand the intricacies of your client’s strategic work problem. What is the BEST way forward?",
+        "options": {
+            "A": "Pretend to understand and keep asking general questions.",
+            "B": "Be transparent and ask if they find value in talking through it.",
+            "C": "End the session, explaining your lack of expertise.",
+            "D": "Ask about their coaching goals instead of their problem.",
+        },
+        "answer": "B",
+        "explanation": "Transparency and curiosity support client exploration without requiring the coach to have expertise in the subject. Reference: ICF Core Competency 5.5",
+    },
+    {
+        "question": "You notice a client’s behavioral pattern across sessions. How do you respond?",
+        "options": {
+            "A": "Ignore the pattern to avoid making assumptions.",
+            "B": "Mention your observation and ask if they want to explore it.",
+            "C": "Advise them on ways to change the pattern.",
+            "D": "Tell them what you think the pattern means.",
+        },
+        "answer": "B",
+        "explanation": "Acknowledging patterns and inviting exploration aligns with active listening and respect for the client’s autonomy. Reference: ICF Core Competency 6.7",
+    },
+    {
+        "question": "Your client brings up a personal dilemma that makes you uncomfortable. What is the BEST way to proceed?",
+        "options": {
+            "A": "Suggest they bring it up with someone else.",
+            "B": "Ask how they feel about the topic and what they want to achieve.",
+            "C": "End the session and reschedule for another time.",
+            "D": "Express your discomfort and advise them on the issue.",
+        },
+        "answer": "B",
+        "explanation": "Partnering with the client to address their concerns ensures professionalism and alignment with their goals. Reference: ICF Core Competency 4.6",
+    },
+    {
+        "question": "Your client suddenly has an AHA moment during the session. What is the BEST response?",
+        "options": {
+            "A": "Pause and allow them time to process their realization.",
+            "B": "Summarize what you think their realization is.",
+            "C": "Ask them to quickly describe their insight before it’s lost.",
+            "D": "Praise them for having a breakthrough moment.",
+        },
+        "answer": "A",
+        "explanation": "Silence and space allow clients to solidify and reflect on their learning. Reference: ICF Core Competency 5.5",
+    },
+    {
+        "question": "Your client mentions plans to bring in external consultants for an issue. What is the BEST way to react?",
+        "options": {
+            "A": "Encourage them to consider alternatives.",
+            "B": "Ask what they want to achieve with the consultants.",
+            "C": "Suggest you can coach them on consultant management.",
+            "D": "Advise against external consultants.",
+        },
+        "answer": "B",
+        "explanation": "Understanding the client’s goals maintains focus on their desired outcomes and autonomy. Reference: ICF Core Competency 6.5",
+    },
+    {
+        "question": "Your client asks for feedback on a presentation they are preparing. What is the BEST way forward?",
+        "options": {
+            "A": "Provide detailed feedback to help them improve.",
+            "B": "Decline, explaining that coaching is not consulting.",
+            "C": "Ask what they want to achieve with their presentation.",
+            "D": "Recommend they seek feedback from a trusted colleague.",
+        },
+        "answer": "C",
+        "explanation": "Focusing on the client’s goals helps align coaching with their needs. Reference: ICF Core Competency 3.7",
+    },
+    {
+        "question": "During a session, a client says they feel stuck in their career and want quick advice. How should you respond?",
+        "options": {
+            "A": "Ask questions to help them explore their feelings of being stuck.",
+            "B": "Provide a few quick strategies they can try.",
+            "C": "Recommend seeking career counseling.",
+            "D": "Focus on unrelated topics to avoid giving advice.",
+        },
+        "answer": "A",
+        "explanation": "Asking exploratory questions aligns with coaching principles of client autonomy and insight generation. Reference: ICF Core Competency 7.1",
+    },
+    {
+        "question": "A new client wants to establish the coaching agenda for their first session. What is the BEST approach?",
+        "options": {
+            "A": "Let the client set the agenda without input.",
+            "B": "Partner with them to create clear session goals.",
+            "C": "Focus on building rapport instead of setting an agenda.",
+            "D": "Establish your own coaching agenda to guide the session.",
+        },
+        "answer": "B",
+        "explanation": "Partnering with the client to establish goals ensures alignment and clarity for the session. Reference: ICF Core Competency 3.1",
+    },
+    {
+        "question": "Your client frequently references a metaphor to describe their work. What is the BEST response?",
+        "options": {
+            "A": "Ask them to expand on the metaphor and its significance.",
+            "B": "Encourage them to use more concrete language.",
+            "C": "Interpret the metaphor and offer your perspective.",
+            "D": "Avoid discussing metaphors and focus on facts.",
+        },
+        "answer": "A",
+        "explanation": "Exploring metaphors can reveal deeper insights about the client’s perspective. Reference: ICF Core Competency 7.1",
+    },
+    {
+        "question": "Your client is animatedly sharing a story and generating insights. What should you do?",
+        "options": {
+            "A": "Let them talk and assume they will remember the insights.",
+            "B": "Interrupt to ensure you are asking relevant questions.",
+            "C": "Acknowledge their insights and ask if they want to summarize.",
+            "D": "Shift the conversation to focus on action steps.",
+        },
+        "answer": "C",
+        "explanation": "Acknowledging and summarizing insights helps the client solidify their learning. Reference: ICF Core Competency 6.7",
+    },
+    {
+        "question": "Your client asks you to recommend an industry-specific strategy for an ongoing project. What should you do?",
+        "options": {
+            "A": "Provide recommendations based on your expertise.",
+            "B": "Clarify that coaching focuses on facilitating their ideas.",
+            "C": "Refer them to a consultant.",
+            "D": "Redirect to unrelated coaching goals.",
+        },
+        "answer": "B",
+        "explanation": "Maintaining the distinction between coaching and consulting ensures ethical alignment. Reference: ICF Core Competency 1.6",
+    },
+    {
+        "question": "A client mentions personal details that conflict with their stated goals. What is the BEST response?",
+        "options": {
+            "A": "Ignore the details and stick to their goals.",
+            "B": "Ask if they want to explore how these details relate to their goals.",
+            "C": "Advise them to adjust their goals.",
+            "D": "Shift focus to areas where there is no conflict.",
+        },
+        "answer": "B",
+        "explanation": "Exploring inconsistencies helps the client reconcile their priorities. Reference: ICF Core Competency 3.6",
+    },
+    {
+        "question": "Your client brings up sensitive workplace dynamics that make you uncomfortable. What should you do?",
+        "options": {
+            "A": "Focus on general aspects of their workplace challenges.",
+            "B": "Share your discomfort and offer advice.",
+            "C": "Ask how they want to address the dynamics moving forward.",
+            "D": "Refer them to someone else for help.",
+        },
+        "answer": "C",
+        "explanation": "Partnering with the client to determine their next steps ensures alignment with their goals. Reference: ICF Core Competency 4.6",
+    },
+    {
+        "question": "Your client repeatedly misses sessions without prior notice. What is the BEST way forward?",
+        "options": {
+            "A": "Charge them for the missed sessions to enforce accountability.",
+            "B": "Discuss the impact of their actions and explore next steps.",
+            "C": "Ignore the behavior and continue as planned.",
+            "D": "Terminate the coaching agreement immediately.",
+        },
+        "answer": "B",
+        "explanation": "Addressing the issue respectfully and collaboratively aligns with ethical standards. Reference: ICF Core Competency 3.6",
     },
 ]
