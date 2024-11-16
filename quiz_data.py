@@ -1694,7 +1694,7 @@ quiz = [
         "explanation": "Powerful questions are used to facilitate client insight and learning, helping them explore new perspectives and deepen their self-awareness.\nReference: ICF Core Competencies, Competency 7: Evokes Awareness.",
     },
     {
-        "question": 'sWhich of the following best describes "maintaining presence" in a coaching session?'s,
+        "question": "Which of the following best describes 'maintaining presence' in a coaching session?",
         "options": {
             "A": "Remaining silent for long periods to encourage client reflection",
             "B": "Demonstrating empathy, curiosity, and adaptability in response to the client's needs",
