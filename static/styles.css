@@ -1,5 +1,5 @@
-/* styles.css */
 
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f6ff; /* Very light blue background for a clean look */
@@ -51,15 +51,26 @@ form div {
     margin-bottom: 10px;
 }
 
-input[type="radio"] {
+/* Updated Radio Button and Label Alignment */
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.checkbox-container input[type="radio"] {
     margin-right: 10px;
+    margin-top: 5px; /* Aligns checkbox with the label text */
 }
 
-.label {
+.checkbox-container label {
     font-size: 16px;
+    line-height: 1.5; /* Ensures proper spacing for multiline labels */
     color: #2a3b5f; /* Matches main text color */
+    display: inline-block;
 }
 
+/* Footer */
 footer {
     text-align: center;
     font-size: 14px;

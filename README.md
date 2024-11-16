@@ -41,6 +41,15 @@ Install the required Python packages:
 ### Deactivate Virtual Environment
 `deactivate`
 
+## Configuration
+
+Persistent Secret Key:
+* For production deployments, it’s crucial to have a persistent secret key to avoid invalidating user sessions when the application restarts.
+* Set SECRET_KEY in the environment to ensure stability.
+Fallback (Development):
+* Generating a random key with os.urandom is useful for local development and testing environments but is not recommended for production.
+
+Always use a fixed, secure secret key in production, stored in a safe place like environment variables or a secret management tool.
 
 ## Usage
 Start the Flask server:
