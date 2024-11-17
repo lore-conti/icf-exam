@@ -7,7 +7,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
 from quiz_data import quiz
-from users import users  # Import users dictionary
+from users import users  # Import the shared users dictionary
 
 # Flask App Configuration
 app = Flask(__name__)
@@ -17,7 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY", os.urandom(24))  # Use secure secr
 app.config.update(
     SESSION_COOKIE_SECURE=True,  # Only allow cookies over HTTPS
     SESSION_COOKIE_HTTPONLY=True,  # Prevent client-side access to cookies
-    SESSION_COOKIE_SAMESITE="Lax"  # Prevent cross-site request forgery
+    SESSION_COOKIE_SAMESITE="Lax",  # Prevent cross-site request forgery
 )
 
 # Rate Limiting Configuration
@@ -37,27 +37,6 @@ def redirect_to_login():
 
 
 # Routes
-@app.route("/login", methods=["GET", "POST"])
-@limiter.limit("10 per minute")  # Limit to 10 login attempts per minute
-def login():
-    """Handle user login."""
-    if request.method == "POST":
-        email = request.form.get("email")
-        password = request.form.get("password").encode('utf-8')  # Encode to bytes
-        if email in users and bcrypt.checkpw(password, users[email]):  # Validate credentials
-            session["user"] = email  # Store user session
-            return redirect(url_for("home"))
-        return "Invalid email or password. Please try again."
-    return render_template("login.html")
-
-
-@app.route("/logout")
-def logout():
-    """Handle user logout."""
-    session.pop("user", None)  # Remove user session
-    return redirect(url_for("login"))
-
-
 @app.route("/")
 def home():
     """Redirect to the first question after initializing quiz state."""
@@ -66,9 +45,65 @@ def home():
     session.update(
         correct_answers=0,
         answered_questions=0,
-        quiz_indices=random.sample(range(len(quiz)), len(quiz))
+        quiz_indices=random.sample(range(len(quiz)), len(quiz)),
     )
     return redirect(url_for("question", qid=0))
+
+@app.route("/login", methods=["GET", "POST"])
+@limiter.limit("10 per minute")  # Limit to 10 login attempts per minute
+def login():
+    """Handle user login."""
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password").encode("utf-8")  # Encode to bytes
+        if email in users and bcrypt.checkpw(
+            password, users[email]
+        ):  # Validate credentials
+            session["user"] = email  # Store user session
+            return redirect(url_for("home"))
+        return "Invalid email or password. Please try again."
+    return render_template("login.html")
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    """Handle user registration."""
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm_password")
+
+        # Validate input
+        if not email or not password or not confirm_password:
+            return "All fields are required. Please try again."
+        if password != confirm_password:
+            return "Passwords do not match. Please try again."
+        if email in users:
+            return "Email already registered. Please log in."
+
+        # Hash the password
+        hashed_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+
+        # Save the user
+        users[email] = hashed_password
+
+        # Persist the updated users to `users.py`
+        with open("users.py", "w") as file:
+            file.write("users = {\n")
+            for user_email, user_password in users.items():
+                file.write(f'    "{user_email}": {user_password},\n')
+            file.write("}\n")
+
+        return "Registration successful! You can now log in."
+    return render_template("register.html")
+
+
+@app.route("/logout")
+def logout():
+    """Handle user logout."""
+    session.pop("user", None)  # Remove user session
+    return redirect(url_for("login"))
+
 
 
 @app.route("/question/<int:qid>")
@@ -108,7 +143,9 @@ def submit(qid):
     session["answered_questions"] += 1
     if user_answer == current_question["answer"]:
         session["correct_answers"] += 1
-    user_answer_text = current_question["options"].get(user_answer, "No answer selected")
+    user_answer_text = current_question["options"].get(
+        user_answer, "No answer selected"
+    )
     correct_answer_text = current_question["options"][current_question["answer"]]
     return render_template(
         "result.html",
@@ -131,7 +168,11 @@ def finish():
         return redirect_to_login()
     correct_answers = session.get("correct_answers", 0)
     answered_questions = session.get("answered_questions", 0)
-    score_percentage = round((correct_answers / answered_questions) * 100, 0) if answered_questions else 0
+    score_percentage = (
+        round((correct_answers / answered_questions) * 100, 0)
+        if answered_questions
+        else 0
+    )
     return render_template(
         "finish.html",
         answered=answered_questions,
