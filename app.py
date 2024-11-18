@@ -42,7 +42,20 @@ def make_session_permanent():
     app.permanent_session_lifetime = Config.SESSION_LIFETIME
     app.logger.debug("Session set to permanent.")
 
+# Utility Functions
+def is_logged_in():
+    """Check if the user is logged in."""
+    logged_in = "user" in session
+    app.logger.debug(f"User logged in: {logged_in}")
+    return logged_in
 
+def redirect_to_login():
+    """Redirect to the login page if the user is not logged in."""
+    if not is_logged_in():
+        app.logger.warning("Unauthorized access attempt. Redirecting to login.")
+        return redirect(url_for("login"))
+    
+    
 @app.route("/")
 def home():
     """Redirect to the first question after initializing quiz state."""
