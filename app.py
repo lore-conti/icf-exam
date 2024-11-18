@@ -148,6 +148,49 @@ def question(qid):
         question_id=question_index,
     )
 
+@app.route("/submit/<int:qid>", methods=["POST"])
+def submit(qid):
+    """Handle the answer submission."""
+    if not is_logged_in():
+        return redirect_to_login()
+
+    # Retrieve the quiz indices from the session
+    quiz_indices = session.get("quiz_indices", [])
+    if not (0 <= qid < len(quiz_indices)):
+        # Redirect to the finish page if the question ID is invalid
+        return redirect(url_for("finish"))
+
+    question_index = quiz_indices[qid]
+    current_question = quiz[question_index]
+
+    # Retrieve the user's answer
+    user_answer = request.form.get("answer")
+    if not user_answer:
+        flash("No answer selected. Please try again.", "warning")
+        return redirect(url_for("question", qid=qid))
+
+    # Update session data
+    session["answered_questions"] += 1
+    if user_answer == current_question["answer"]:
+        session["correct_answers"] += 1
+
+    # Render the result
+    user_answer_text = current_question["options"].get(user_answer, "No answer selected")
+    correct_answer_text = current_question["options"][current_question["answer"]]
+    return render_template(
+        "result.html",
+        correct=(user_answer == current_question["answer"]),
+        quiz=current_question,
+        user_answer=user_answer,
+        user_answer_text=user_answer_text,
+        correct_answer_text=correct_answer_text,
+        next_qid=qid + 1,
+        is_last=(qid + 1 >= len(quiz_indices)),
+        correct_count=session["correct_answers"],
+        total=len(quiz_indices),
+    )
+
+
 @app.route("/logout")
 def logout():
     """Handle user logout."""
