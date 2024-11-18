@@ -15,6 +15,20 @@ app.config.from_object(Config)
 db.init_app(app)
 limiter = Limiter(get_remote_address, app=app)
 
+
+def initialize_db(app):
+    """Check if the database is initialized and create tables if necessary."""
+    with app.app_context():
+        inspector = reflection.Inspector.from_engine(db.engine)
+        tables = inspector.get_table_names()
+
+        if not tables:  # No tables exist in the database
+            db.create_all()
+            print("Database initialized: Tables created.")
+        else:
+            print("Database already initialized: Tables exist.")
+
+
 # Flask session initialization
 @app.before_request
 def make_session_permanent():
@@ -22,15 +36,18 @@ def make_session_permanent():
     session.permanent = True
     app.permanent_session_lifetime = Config.SESSION_LIFETIME
 
+
 # Utility Functions
 def is_logged_in():
     """Check if the user is logged in."""
     return "user" in session
 
+
 def redirect_to_login():
     """Redirect to the login page if the user is not logged in."""
     if not is_logged_in():
         return redirect(url_for("login"))
+
 
 # Routes
 @app.route("/")
@@ -44,6 +61,7 @@ def home():
     if "quiz_indices" not in session:
         session["quiz_indices"] = random.sample(range(len(quiz)), len(quiz))
     return redirect(url_for("question", qid=0))
+
 
 @app.route("/login", methods=["GET", "POST"])
 @limiter.limit("10 per minute")
@@ -61,6 +79,7 @@ def login():
             app.logger.error(f"Login error: {e}")
             flash("An error occurred during login. Please try again.", "danger")
     return render_template("login.html")
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -89,12 +108,14 @@ def register():
             flash("An error occurred during registration. Please try again.", "danger")
     return render_template("register.html")
 
+
 @app.route("/logout")
 def logout():
     """Handle user logout."""
     session.pop("user", None)
     flash("You have been logged out successfully.", "success")
     return redirect(url_for("login"))
+
 
 @app.route("/question/<int:qid>")
 def question(qid):
@@ -116,6 +137,7 @@ def question(qid):
         question_id=question_index,
     )
 
+
 @app.route("/submit/<int:qid>", methods=["POST"])
 def submit(qid):
     """Handle the answer submission."""
@@ -133,7 +155,9 @@ def submit(qid):
     session["answered_questions"] += 1
     if user_answer == current_question["answer"]:
         session["correct_answers"] += 1
-    user_answer_text = current_question["options"].get(user_answer, "No answer selected")
+    user_answer_text = current_question["options"].get(
+        user_answer, "No answer selected"
+    )
     correct_answer_text = current_question["options"][current_question["answer"]]
     return render_template(
         "result.html",
@@ -147,6 +171,7 @@ def submit(qid):
         correct_count=session["correct_answers"],
         total=len(quiz_indices),
     )
+
 
 @app.route("/finish")
 def finish():
@@ -167,6 +192,11 @@ def finish():
         percentage=score_percentage,
     )
 
+
 # Run Application
 if __name__ == "__main__":
+    # Conditional database initialization
+    initialize_db(app)
+
+    # Start the Flask app
     app.run(debug=True)
