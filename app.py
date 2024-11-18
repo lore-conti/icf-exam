@@ -6,6 +6,7 @@ from models import db
 from db_utils import create_user, get_user_by_email, validate_user
 import random
 from quiz_data import quiz  # Assuming `quiz_data.py` contains quiz questions
+from sqlalchemy import inspect
 
 # Initialize Flask App
 app = Flask(__name__)
@@ -19,7 +20,7 @@ limiter = Limiter(get_remote_address, app=app)
 def initialize_db(app):
     """Check if the database is initialized and create tables if necessary."""
     with app.app_context():
-        inspector = reflection.Inspector.from_engine(db.engine)
+        inspector = inspect(db.engine)
         tables = inspector.get_table_names()
 
         if not tables:  # No tables exist in the database
@@ -197,6 +198,6 @@ def finish():
 if __name__ == "__main__":
     # Conditional database initialization
     initialize_db(app)
-
+    print(Config.ENV)
     # Start the Flask app
     app.run(debug=True)
