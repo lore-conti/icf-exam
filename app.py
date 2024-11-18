@@ -55,7 +55,7 @@ def redirect_to_login():
         app.logger.warning("Unauthorized access attempt. Redirecting to login.")
         return redirect(url_for("login"))
     
-    
+
 @app.route("/")
 def home():
     """Redirect to the first question after initializing quiz state."""
@@ -122,6 +122,31 @@ def register():
             flash("An error occurred during registration. Please try again.", "danger")
     return render_template("register.html")
 
+@app.route("/question/<int:qid>")
+def question(qid):
+    """Display the quiz question."""
+    if not is_logged_in():
+        return redirect_to_login()
+
+    # Retrieve the quiz indices from the session
+    quiz_indices = session.get("quiz_indices", [])
+    if not (0 <= qid < len(quiz_indices)):
+        # Redirect to the finish page if the question ID is invalid
+        return redirect(url_for("finish"))
+
+    question_index = quiz_indices[qid]
+    current_question = quiz[question_index]
+
+    # Render the quiz question
+    return render_template(
+        "quiz.html",
+        quiz=current_question,
+        qid=qid,
+        total=len(quiz_indices),
+        correct=session.get("correct_answers", 0),
+        question_number=qid + 1,
+        question_id=question_index,
+    )
 
 @app.route("/logout")
 def logout():
