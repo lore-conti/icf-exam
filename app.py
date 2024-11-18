@@ -1,40 +1,36 @@
-import os
-import random
-
-import bcrypt
-from flask import Flask, redirect, render_template, request, session, url_for
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from config import Config
+from models import db
+from db_utils import create_user, get_user_by_email, validate_user
+import random
+from quiz_data import quiz  # Assuming `quiz_data.py` contains quiz questions
 
-from quiz_data import quiz
-from users import users  # Import the shared users dictionary
-
-# Flask App Configuration
+# Initialize Flask App
 app = Flask(__name__)
-app.secret_key = os.environ.get("SECRET_KEY", os.urandom(24))  # Use secure secret key
+app.config.from_object(Config)
 
-# Cookie Security Settings
-app.config.update(
-    SESSION_COOKIE_SECURE=True,  # Only allow cookies over HTTPS
-    SESSION_COOKIE_HTTPONLY=True,  # Prevent client-side access to cookies
-    SESSION_COOKIE_SAMESITE="Lax",  # Prevent cross-site request forgery
-)
-
-# Rate Limiting Configuration
+# Initialize Extensions
+db.init_app(app)
 limiter = Limiter(get_remote_address, app=app)
 
+# Flask session initialization
+@app.before_request
+def make_session_permanent():
+    """Ensure sessions are permanent and set a suitable duration."""
+    session.permanent = True
+    app.permanent_session_lifetime = Config.SESSION_LIFETIME
 
 # Utility Functions
 def is_logged_in():
     """Check if the user is logged in."""
     return "user" in session
 
-
 def redirect_to_login():
     """Redirect to the login page if the user is not logged in."""
     if not is_logged_in():
         return redirect(url_for("login"))
-
 
 # Routes
 @app.route("/")
@@ -42,28 +38,29 @@ def home():
     """Redirect to the first question after initializing quiz state."""
     if not is_logged_in():
         return redirect_to_login()
-    session.update(
-        correct_answers=0,
-        answered_questions=0,
-        quiz_indices=random.sample(range(len(quiz)), len(quiz)),
-    )
+    # Safely initialize quiz state in session
+    session["correct_answers"] = session.get("correct_answers", 0)
+    session["answered_questions"] = session.get("answered_questions", 0)
+    if "quiz_indices" not in session:
+        session["quiz_indices"] = random.sample(range(len(quiz)), len(quiz))
     return redirect(url_for("question", qid=0))
 
 @app.route("/login", methods=["GET", "POST"])
-@limiter.limit("10 per minute")  # Limit to 10 login attempts per minute
+@limiter.limit("10 per minute")
 def login():
     """Handle user login."""
     if request.method == "POST":
         email = request.form.get("email")
-        password = request.form.get("password").encode("utf-8")  # Encode to bytes
-        if email in users and bcrypt.checkpw(
-            password, users[email]
-        ):  # Validate credentials
-            session["user"] = email  # Store user session
-            return redirect(url_for("home"))
-        return "Invalid email or password. Please try again."
+        password = request.form.get("password")
+        try:
+            if validate_user(email, password):
+                session["user"] = email
+                return redirect(url_for("home"))
+            flash("Invalid email or password. Please try again.", "danger")
+        except Exception as e:
+            app.logger.error(f"Login error: {e}")
+            flash("An error occurred during login. Please try again.", "danger")
     return render_template("login.html")
-
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -73,38 +70,31 @@ def register():
         password = request.form.get("password")
         confirm_password = request.form.get("confirm_password")
 
-        # Validate input
-        if not email or not password or not confirm_password:
-            return "All fields are required. Please try again."
-        if password != confirm_password:
-            return "Passwords do not match. Please try again."
-        if email in users:
-            return "Email already registered. Please log in."
+        try:
+            if not email or not password or not confirm_password:
+                flash("All fields are required. Please try again.", "danger")
+                return redirect(url_for("register"))
+            if password != confirm_password:
+                flash("Passwords do not match. Please try again.", "danger")
+                return redirect(url_for("register"))
+            if get_user_by_email(email):
+                flash("Email already registered. Please log in.", "danger")
+                return redirect(url_for("login"))
 
-        # Hash the password
-        hashed_password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
-
-        # Save the user
-        users[email] = hashed_password
-
-        # Persist the updated users to `users.py`
-        with open("users.py", "w") as file:
-            file.write("users = {\n")
-            for user_email, user_password in users.items():
-                file.write(f'    "{user_email}": {user_password},\n')
-            file.write("}\n")
-
-        return "Registration successful! You can now log in."
+            create_user(email, password)
+            flash("Registration successful! You can now log in.", "success")
+            return redirect(url_for("login"))
+        except Exception as e:
+            app.logger.error(f"Registration error: {e}")
+            flash("An error occurred during registration. Please try again.", "danger")
     return render_template("register.html")
-
 
 @app.route("/logout")
 def logout():
     """Handle user logout."""
-    session.pop("user", None)  # Remove user session
+    session.pop("user", None)
+    flash("You have been logged out successfully.", "success")
     return redirect(url_for("login"))
-
-
 
 @app.route("/question/<int:qid>")
 def question(qid):
@@ -126,7 +116,6 @@ def question(qid):
         question_id=question_index,
     )
 
-
 @app.route("/submit/<int:qid>", methods=["POST"])
 def submit(qid):
     """Handle the answer submission."""
@@ -139,13 +128,12 @@ def submit(qid):
     current_question = quiz[question_index]
     user_answer = request.form.get("answer")
     if not user_answer:
+        flash("No answer selected. Please try again.", "warning")
         return redirect(url_for("question", qid=qid))
     session["answered_questions"] += 1
     if user_answer == current_question["answer"]:
         session["correct_answers"] += 1
-    user_answer_text = current_question["options"].get(
-        user_answer, "No answer selected"
-    )
+    user_answer_text = current_question["options"].get(user_answer, "No answer selected")
     correct_answer_text = current_question["options"][current_question["answer"]]
     return render_template(
         "result.html",
@@ -159,7 +147,6 @@ def submit(qid):
         correct_count=session["correct_answers"],
         total=len(quiz_indices),
     )
-
 
 @app.route("/finish")
 def finish():
@@ -179,7 +166,6 @@ def finish():
         correct=correct_answers,
         percentage=score_percentage,
     )
-
 
 # Run Application
 if __name__ == "__main__":
