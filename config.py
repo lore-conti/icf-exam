@@ -10,7 +10,7 @@ class Config:
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.environ.get("SECRET_KEY", os.urandom(24))
-    SESSION_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = ENV != 'development'
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SAMESITE = "Lax"
     
