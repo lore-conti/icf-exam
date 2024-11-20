@@ -3,7 +3,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from config import Config
 from models import db
-from db_utils import create_user, get_user_by_email, validate_user
+from db_utils import initialize_db, create_user, get_user_by_email, validate_user
 import random
 from quiz_data import quiz
 from sqlalchemy import inspect
@@ -22,25 +22,13 @@ db.init_app(app)
 limiter = Limiter(get_remote_address, app=app)
 
 
-def initialize_db(app):
-    """Check if the database is initialized and create tables if necessary."""
-    with app.app_context():
-        inspector = inspect(db.engine)
-        tables = inspector.get_table_names()
-
-        if not tables:
-            db.create_all()
-            app.logger.info("Database initialized: Tables created.")
-        else:
-            app.logger.info("Database already initialized: Tables exist.")
-
-
 @app.before_request
 def make_session_permanent():
     """Ensure sessions are permanent and set a suitable duration."""
     session.permanent = True
     app.permanent_session_lifetime = Config.SESSION_LIFETIME
     app.logger.debug("Session set to permanent.")
+
 
 # Utility Functions
 def is_logged_in():
@@ -49,12 +37,13 @@ def is_logged_in():
     app.logger.debug(f"User logged in: {logged_in}")
     return logged_in
 
+
 def redirect_to_login():
     """Redirect to the login page if the user is not logged in."""
     if not is_logged_in():
         app.logger.warning("Unauthorized access attempt. Redirecting to login.")
         return redirect(url_for("login"))
-    
+
 
 @app.route("/")
 def home():
@@ -109,7 +98,9 @@ def register():
                 flash("Passwords do not match. Please try again.", "danger")
                 return redirect(url_for("register"))
             if get_user_by_email(email):
-                app.logger.warning(f"Registration failed: Email already registered ({email}).")
+                app.logger.warning(
+                    f"Registration failed: Email already registered ({email})."
+                )
                 flash("Email already registered. Please log in.", "danger")
                 return redirect(url_for("login"))
 
@@ -121,6 +112,7 @@ def register():
             app.logger.error(f"Registration error for email {email}: {e}")
             flash("An error occurred during registration. Please try again.", "danger")
     return render_template("register.html")
+
 
 @app.route("/question/<int:qid>")
 def question(qid):
@@ -147,6 +139,7 @@ def question(qid):
         question_number=qid + 1,
         question_id=question_index,
     )
+
 
 @app.route("/submit/<int:qid>", methods=["POST"])
 def submit(qid):
@@ -175,7 +168,9 @@ def submit(qid):
         session["correct_answers"] += 1
 
     # Render the result
-    user_answer_text = current_question["options"].get(user_answer, "No answer selected")
+    user_answer_text = current_question["options"].get(
+        user_answer, "No answer selected"
+    )
     correct_answer_text = current_question["options"][current_question["answer"]]
     return render_template(
         "result.html",
@@ -212,7 +207,9 @@ def finish():
         if answered_questions
         else 0
     )
-    app.logger.info(f"Quiz finished. Score: {score_percentage}% ({correct_answers}/{answered_questions})")
+    app.logger.info(
+        f"Quiz finished. Score: {score_percentage}% ({correct_answers}/{answered_questions})"
+    )
     return render_template(
         "finish.html",
         answered=answered_questions,
