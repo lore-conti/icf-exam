@@ -129,17 +129,19 @@ def question(qid):
     question_index = quiz_indices[qid]
     current_question = quiz[question_index]
 
+    # Log debugging information
+    app.logger.debug(f"Rendering question {qid}: {current_question}")
+
     # Render the quiz question
     return render_template(
         "quiz.html",
         quiz=current_question,
-        qid=qid,
+        qid=qid,  # Ensure qid is passed to the template
         total=len(quiz_indices),
         correct=session.get("correct_answers", 0),
         question_number=qid + 1,
         question_id=question_index,
     )
-
 
 @app.route("/submit/<int:qid>", methods=["POST"])
 def submit(qid):
@@ -168,9 +170,7 @@ def submit(qid):
         session["correct_answers"] += 1
 
     # Render the result
-    user_answer_text = current_question["options"].get(
-        user_answer, "No answer selected"
-    )
+    user_answer_text = current_question["options"].get(user_answer, "No answer selected")
     correct_answer_text = current_question["options"][current_question["answer"]]
     return render_template(
         "result.html",
