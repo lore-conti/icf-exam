@@ -51,12 +51,12 @@ Fallback (Development):
 Always use a fixed, secure secret key in production, stored in a safe place like environment variables or a secret management tool.
 
 
-## Crete the db
-python
+## Create the db for production
+```python
 >>> from app import db
 >>> db.create_all()
 >>> exit()
-
+```
 
 ## Usage
 Start the Flask server:
