@@ -42,7 +42,6 @@ Install the required Python packages:
 `deactivate`
 
 ## Configuration
-
 Persistent Secret Key:
 * For production deployments, it’s crucial to have a persistent secret key to avoid invalidating user sessions when the application restarts.
 * Set SECRET_KEY in the environment to ensure stability.
@@ -52,13 +51,11 @@ Fallback (Development):
 Always use a fixed, secure secret key in production, stored in a safe place like environment variables or a secret management tool.
 
 
-## Crete the dv
-
+## Crete the db
 python
 >>> from app import db
 >>> db.create_all()
 >>> exit()
-
 
 
 ## Usage
